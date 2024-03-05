@@ -4,10 +4,21 @@ from src.generators.random_range \
 from random \
     import SystemRandom
 
-alphabet_range = RandomRange("a", "z")
-number_range = RandomRange("0", "9")
+alphabet_range = RandomRange(
+    "a", 
+    "z"
+)
 
-random_ranges = [alphabet_range, number_range]
+number_range = RandomRange(
+    "0", 
+    "9"
+)
+
+random_ranges = [
+    alphabet_range, 
+    number_range
+]
+
 length_of_random_ranges = len(random_ranges)
 random_ranges_last_index: int = length_of_random_ranges - 1
 
@@ -20,7 +31,9 @@ def main(
     select_generator = SystemRandom()
     password = ""
 
-    for idx in range(length_of_password):
+    for idx in range(
+        length_of_password
+    ):
         select = select_generator.randint(
             0,
             random_ranges_last_index
@@ -42,7 +55,9 @@ def main(
 
         password = password + selected_value
 
-    print(password)
+    print(
+        password
+    )
 
 
 if __name__ == "__main__":
